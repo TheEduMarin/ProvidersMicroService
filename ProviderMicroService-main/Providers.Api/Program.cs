@@ -1,0 +1,1 @@
+using ProviderMicroService.Domain; using ProviderMicroService.Infrastructure; var b=WebApplication.CreateBuilder(args); b.Services.AddControllers(); b.Services.AddSingleton<IProviderRepository>(new ProviderRepository("server=localhost;port=3306;database=pharmacydb;user=admin;password=adminpass")); var app=b.Build(); app.MapControllers(); app.Run();
